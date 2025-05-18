@@ -1,274 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Richu Raju | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1d4ed8;
-      --primary-light: #3b82f6;
-      --dark: #111827;
-      --gray-dark: #374151;
-      --gray-medium: #6b7280;
-      --gray-light: #e5e7eb;
-      --white: #ffffff;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Richu Raju | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #ffffff;
+        --primary-light: #3b82f6;
+        --navy-blue: #49499a;
+        --dark: #111827;
+        --gray-dark: #374151;
+        --gray-medium: #6b7280;
+        --gray-light: #e5e7eb;
+        --white: #ffffff;
+        --beige: #f5f5dc;
+      }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to right, #e8f0f3, #d2e3e9, #b5c8db);
-      margin: 0;
-      padding: 2rem;
-      color: var(--dark);
-      font-size: 1rem;
-      line-height: 1.6;
-    }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: url(background.jpg) no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        color: var(--white);
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
+      /* Navigation Bar */
+      nav {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(5px);
+      }
 
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-    }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-      max-width: 1200px;
-      margin-inline: auto;
-    }
+      .nav-logo {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--white);
+        text-decoration: none;
+      }
 
-    .header-profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
 
-    @media(min-width: 768px) {
+      .nav-links a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-light);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.9);
+          padding: 1rem 2rem;
+        }
+        
+        .nav-links.active {
+          display: flex;
+        }
+        
+        .mobile-menu-btn {
+          display: block;
+        }
+      }
+
+      h1, h2, h3 {
+        font-family: 'Poppins', sans-serif;
+        color: var(--white);
+      }
+
+      h1 {
+        font-size: 6rem;
+        font-weight: 700;
+        margin-bottom: 0;
+        line-height: 1;
+      }
+
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 2.2rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 2rem;
+        max-width: 1200px;
+        margin-inline: auto;
+        padding: 1.5rem;
+      }
+
       .header-profile {
-        flex-direction: row;
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
       }
-    }
 
-    .header-profile img {
-      width: 60vw;
-      height: 60vw;
-      max-width: 280px;
-      max-height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(29, 78, 216, 0.3);
-      box-shadow: 0 4px 15px rgba(29, 78, 216, 0.2);
-    }
+      @media(min-width: 768px) {
+        .header-profile {
+          flex-direction: row;
+          text-align: left;
+        }
+      }
 
-    .header-profile-text {
-      padding-left: 0;
-      text-align: center;
-    }
+      .header-profile img {
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(29, 78, 216, 0.3);
+        box-shadow: 0 4px 15px rgba(29, 78, 216, 0.2);
+      }
 
-    @media(min-width: 768px) {
       .header-profile-text {
-        padding-left: 2rem;
-        text-align: left;
+        padding-left: 0;
+        text-align: center;
       }
-    }
 
-    .icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+      @media(min-width: 768px) {
+        .header-profile-text {
+          padding-left: 2rem;
+          text-align: left;
+        }
+      }
 
-    .icon-link {
-      text-decoration: none;
-      border: 2px solid var(--primary);
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      color: var(--primary);
-      transition: 0.3s;
-      font-size: 0.95rem;
-    }
+      .name-title-container {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
 
-    .icon-link:hover {
-      background-color: var(--primary);
-      color: white;
-    }
+      .job-role {
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--white);
+        opacity: 0.9;
+      }
 
-    section {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
+      .icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
 
-    @media(min-width: 600px) {
+      .icon-link {
+        text-decoration: none;
+        border: 2px solid var(--primary);
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        color: var(--primary);
+        transition: 0.3s;
+        font-size: 1.2rem;
+      }
+
+      .icon-link:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
       section {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem 1rem;
       }
-    }
 
-    .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      font-size: 0.95rem;
-    }
-
-    .card h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-
-    .project-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-    }
-
-    .btn {
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      border: none;
-      cursor: pointer;
-      background: var(--primary);
-      color: white;
-      font-weight: 500;
-      transition: background 0.3s;
-      font-size: 0.9rem;
-    }
-
-    .btn:hover {
-      background: var(--primary-light);
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      position: relative;
-      max-width: 90%;
-      max-height: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .modal img {
-      max-width: 100%;
-      max-height: 400px;
-      border-radius: 10px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--gray-dark);
-    }
-
-    .carousel-btn {
-      background: var(--primary);
-      color: white;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 50%;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      margin: 1rem;
-    }
-
-    @media(max-width: 500px) {
-      .carousel-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 1rem;
+      .card {
+        background: none;
+        padding: 1rem 0;
+        font-size: 1.3rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin: 1rem 0;
       }
-    }
 
-    form input, form textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.7rem;
-      border-radius: 8px;
-      border: 1px solid var(--gray-light);
-      font-size: 1rem;
-    }
+      .project {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        align-items: center;
+      }
 
-    form button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-    }
+      .project-details {
+        text-align: center;
+        max-width: 700px;
+      }
 
-    form button:hover {
-      background: var(--primary-light);
-    }
-  </style>
-</head>
+      .project-details ul {
+        font-size: 1.3rem;
+        text-align: left;
+        padding-left: 2rem;
+        margin: 1rem 0;
+      }
+
+      .project-details li {
+        margin-bottom: 0.5rem;
+      }
+
+      .thumbnail-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .thumbnail-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .thumbnail-btn:hover {
+        transform: scale(1.05);
+      }
+
+      .thumbnail-btn img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      /* Image Viewer Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      .modal-img {
+        max-width: 90%;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+
+      .modal-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin-top: 1rem;
+      }
+
+      .modal-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: background 0.3s;
+      }
+
+      .modal-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      form input, form textarea {
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--gray-light);
+        font-size: 1.2rem;
+        color: var(--dark);
+      }
+
+      form textarea {
+        min-height: 150px;
+      }
+
+      form button {
+        background: var(--navy-blue);
+        color: white;
+        border: none;
+        padding: 1rem;
+        font-size: 1.3rem;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+
+      form button:hover {
+        background: #0000a0;
+      }
+    </style>
+  </head>
 <body>
+
+<nav>
+  <div class="nav-container">
+    <a href="#" class="nav-logo">Richu Raju</a>
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
 <header>
   <div class="header-profile">
     <img src="newpic.jpg" alt="Richu Raju Photo" />
     <div class="header-profile-text">
-      <h1>Richu Raju</h1>
-      <p>Full Stack Developer | Software Engineer</p>
+      <div class="name-title-container">
+        <h1>Richu Raju</h1>
+        <p class="job-role">Full Stack Developer | Software Engineer</p>
+      </div>
       <div class="icons">
-        <a class="icon-link" href="mailto:richuraju2.0@gmail.com">📧 Email</a>
-        <a class="icon-link" href="https://github.com/Dazaicodify" target="_blank">🐙 GitHub</a>
-        <a class="icon-link" href="https://www.linkedin.com/in/richu-raju-codify/" target="_blank">🔗 LinkedIn</a>
-        <a class="icon-link" href="Richu Raju.pdf" target="_blank">📄 Resume</a>
+        <a class="icon-link" href="mailto:richuraju2.0@gmail.com"> Email</a>
+        <a class="icon-link" href="https://github.com/Dazaicodify" target="_blank"> GitHub</a>
+        <a class="icon-link" href="https://www.linkedin.com/in/richu-raju-codify/" target="_blank"> LinkedIn</a>
+        <a class="icon-link" href="Richu Raju.pdf" target="_blank"> Resume</a>
       </div>
     </div>
   </div>
 </header>
 
 <section>
-  <div class="card">
+  <div class="card" id="about">
     <h2>About Me</h2>
-    <p>
-      I am a Computer Science and Design student with a strong focus on frontend development and coding. With a keen eye for detail, I specialize in creating visually engaging and user-friendly interfaces. I am skilled in frontend technologies and committed to delivering seamless, intuitive digital experiences. Passionate about continuous learning and problem-solving, I aim to combine design principles with technical expertise to craft innovative solutions.
-    </p>
+    <p>I am a Computer Science and Design student with a strong focus on frontend development and coding. With a keen eye for detail, I specialize in creating visually engaging and user-friendly interfaces. I am skilled in frontend technologies and committed to delivering seamless, intuitive digital experiences. Passionate about continuous learning and problem-solving, I aim to combine design principles with technical expertise to craft innovative solutions.</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="skills">
     <h2>Skills</h2>
     <ul>
       <li><strong>Programming:</strong> Python, C, JavaScript, Java</li>
@@ -278,31 +416,61 @@
     </ul>
   </div>
 
-  <div class="card" style="grid-column: span 2;">
+  <div class="card" id="projects">
     <h2>Projects</h2>
 
-    <h3>VR Interior Decorator app</h3>
-    <div class="project-buttons">
-      <button class="btn" onclick="openModal('decorator')">View Screenshots</button>
+    <div class="project">
+      <div class="project-details">
+        <h3>VR Interior Decorator app</h3>
+        <ul>
+          <li>VR environment with high-quality room and object rendering</li>
+          <li>Immersive interior design tool for placing, moving, and adjusting furniture</li>
+          <li>Customizable Room Layout and Furnishings</li>
+        </ul>
+      </div>
+      <div class="thumbnail-container">
+        <button class="thumbnail-btn" onclick="openModal('decorator', 0)">
+          <img src="startpage.jpg" alt="VR Decorator Thumbnail 1">
+        </button>
+        <button class="thumbnail-btn" onclick="openModal('decorator', 1)">
+          <img src="instruction.jpg" alt="VR Decorator Thumbnail 2">
+        </button>
+        <button class="thumbnail-btn" onclick="openModal('decorator', 2)">
+          <img src="wall.jpg" alt="VR Decorator Thumbnail 3">
+        </button>
+        <button class="thumbnail-btn" onclick="openModal('decorator', 3)">
+          <img src="floor.jpg" alt="VR Decorator Thumbnail 4">
+        </button>
+      </div>
     </div>
-    <ul>
-      <li>VR environment with high-quality room and object rendering</li>
-      <li>Immersive interior design tool for placing, moving, and adjusting furniture</li>
-      <li>Customizable Room Layout and Furnishings</li>
-    </ul>
 
-    <h3>VR Exposition app</h3>
-    <div class="project-buttons">
-      <button class="btn" onclick="openModal('expo')">View Screenshots</button>
+    <div class="project">
+      <div class="project-details">
+        <h3>VR Exposition app</h3>
+        <ul>
+          <li>Immersive 360-degree interactive experience with realistic environments</li>
+          <li>Detailed 3D car showroom with interactive features</li>
+          <li>Intuitive VR game mechanics using headset and controllers</li>
+        </ul>
+      </div>
+      <div class="thumbnail-container">
+        <button class="thumbnail-btn" onclick="openModal('expo', 0)">
+          <img src="1.jpg" alt="VR Exposition Thumbnail 1">
+        </button>
+        <button class="thumbnail-btn" onclick="openModal('expo', 1)">
+          <img src="2.jpg" alt="VR Exposition Thumbnail 2">
+        </button>
+        <button class="thumbnail-btn" onclick="openModal('expo', 2)">
+          <img src="3.png" alt="VR Exposition Thumbnail 3">
+        </button>
+        <button class="thumbnail-btn" onclick="openModal('expo', 3)">
+          <img src="4.jpg" alt="VR Exposition Thumbnail 4">
+        </button>
+      </div>
     </div>
-    <ul>
-      <li>Immersive 360-degree interactive experience with realistic environments</li>
-      <li>Detailed 3D car showroom with interactive features</li>
-      <li>Intuitive VR game mechanics using headset and controllers</li>
-    </ul>
   </div>
 
-  <div class="card" style="grid-column: span 2;">
+  <div class="card" id="contact">
     <h2>Contact</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -313,40 +481,98 @@
   </div>
 </section>
 
-<!-- Screenshot Modal -->
-<div class="modal" id="screenshot-modal">
+<!-- Image Viewer Modal -->
+<div id="imageModal" class="modal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
   <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <button class="carousel-btn" onclick="changeSlide(-1)">&#10094;</button>
-    <img id="modal-image" src="" alt="Screenshot">
-    <button class="carousel-btn" onclick="changeSlide(1)">&#10095;</button>
+    <img id="modalImage" class="modal-img" src="" alt="">
+    <div class="modal-nav">
+      <button class="modal-btn" onclick="navigateImage(-1)">Previous</button>
+      <span id="imageCounter"></span>
+      <button class="modal-btn" onclick="navigateImage(1)">Next</button>
+    </div>
   </div>
 </div>
 
 <script>
-  const slides = {
+  // Image viewer functionality
+  const imageSets = {
     decorator: ['startpage.jpg', 'instruction.jpg', 'wall.jpg', 'floor.jpg'],
-    expo: ['1.jpg', '2.jpg', '3.jpg','4.jpg']
+    expo: ['1.jpg', '2.jpg', '3.png', '4.jpg']
   };
 
+  let currentSet = '';
   let currentIndex = 0;
-  let currentProject = 'decorator';
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  const imageCounter = document.getElementById('imageCounter');
 
-  function openModal(project) {
-    currentProject = project;
-    currentIndex = 0;
-    document.getElementById("modal-image").src = slides[project][0];
-    document.getElementById("screenshot-modal").style.display = 'flex';
+  function openModal(setName, index) {
+    currentSet = setName;
+    currentIndex = index;
+    modalImage.src = imageSets[currentSet][currentIndex];
+    updateCounter();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
-    document.getElementById("screenshot-modal").style.display = 'none';
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 
-  function changeSlide(step) {
-    currentIndex = (currentIndex + step + slides[currentProject].length) % slides[currentProject].length;
-    document.getElementById("modal-image").src = slides[currentProject][currentIndex];
+  function navigateImage(direction) {
+    currentIndex += direction;
+    
+    if (currentIndex < 0) {
+      currentIndex = imageSets[currentSet].length - 1;
+    } else if (currentIndex >= imageSets[currentSet].length) {
+      currentIndex = 0;
+    }
+    
+    modalImage.src = imageSets[currentSet][currentIndex];
+    updateCounter();
   }
+
+  function updateCounter() {
+    imageCounter.textContent = `${currentIndex + 1} / ${imageSets[currentSet].length}`;
+  }
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (modal.style.display === 'flex') {
+      if (e.key === 'ArrowLeft') {
+        navigateImage(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigateImage(1);
+      } else if (e.key === 'Escape') {
+        closeModal();
+      }
+    }
+  });
+
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+    this.reset();
+  });
 </script>
 
 </body>
